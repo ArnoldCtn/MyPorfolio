@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: Georgia, 'Times New Roman', Times, serif;
+}
+
+:root {
+  font-family: Georgia, 'Times New Roman', Times, serif, Roboto, Helvetica, Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-gradient-to-b from-slate-950 via-blue-700 to-slate-500 text-slate-100 min-h-screen selection:bg-blue-600 selection:text-white;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-950;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-800 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-500;
+}
+
+/* Hide/Show classes for animations (we will also use Framer Motion) */
+.reveal-hide {
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(10px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
